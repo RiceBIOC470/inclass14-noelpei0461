@@ -18,7 +18,7 @@ rgb=label2rgb(L1,'jet',[.5 .5 .5]);
 figure
 imshow(rgb,'InitialMagnification','fit')
 %the watershed of erosion basin.
-dist=bwdist(imgbright1);
+dist=bwdist(~imgbright1);
 dist=-dist;
 dist(imgbright1)=-Inf;
 L2=watershed(dist);
